@@ -2,11 +2,13 @@ export const canvasTypeDef = `
 
 type ViewModelCanvas{
     drawingHistorial : [ViewModelHistorial]
+    _id: String
+    _v: Int
 }
 
 type ViewModelHistorial {
     coord_x: Int
-    coord_x: Int
+    coord_y: Int
     color_r: Int
     color_g: Int
     color_b: Int
@@ -16,13 +18,19 @@ type ViewModelHistorial {
 type ViewModelOneCanvasResponse {
     err: Boolean
     message: String
-    canvas: ViewModelCanvas
+    drawingHistorial: ViewModelCanvas
 }
 
 type ViewModelAllCanvasResponse {
     err: Boolean
     message: String
-    canvas: [ViewModelCanvas]
+    drawingHistorials: [ViewModelCanvas]
+}
+
+type ViewModelCanvasResponse {
+    err: Boolean
+    message: String
+    canvas: ViewModelCanvas
 }
 
 type ViewModelDeleteResponse {
@@ -43,12 +51,12 @@ input ViewModelUpdateCanvasInput {
 `;
 
 export const canvasQueries = `
-    getAllHistorials(): ViewModelAllCanvasResponse!
+    getAllHistorials: ViewModelAllCanvasResponse!
     getHistorialsById(id: String!): ViewModelOneCanvasResponse!
 `;
 
 export const canvasMutations = `
-    updateCanvas(model: ViewModelUpdateCanvasInput!, id: String!): ViewModelOneCanvasResponse!
-    createCanvas(): ViewModelOneCanvasResponse!
-    DeleteCanvas(id: String!): ViewModelResponse!
+    updateCanvas(model: ViewModelUpdateCanvasInput!, id: String!): ViewModelCanvasResponse!
+    createCanvas: ViewModelCanvasResponse!
+    DeleteCanvas(id: String!): ViewModelDeleteResponse!
 `;

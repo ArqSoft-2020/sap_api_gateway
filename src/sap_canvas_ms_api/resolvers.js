@@ -6,7 +6,7 @@ console.log(URL);
 
 const resolvers = {
 	Query: {
-		getAllHistorials: () =>
+		getAllHistorials: (_, __,) =>
 			getRequest(`${URL}historial`, ''),
         getHistorialsById: (_, { id }) =>
             getRequest(`${URL}historial/${id}`, ''),
@@ -15,10 +15,10 @@ const resolvers = {
 	Mutation: {
 		updateCanvas: (_, { model, id }) =>
 			generalRequest(`${URL}update/${id}`, 'POST', model),
-        createCanvas: () =>
-			generalRequest(`${URL}update`, 'POST', model),
+        createCanvas: (_, __,) =>
+			generalRequest(`${URL}historial`, 'POST'),
         DeleteCanvas: (_, { id }) =>
-            generalRequest(`${URL}update/${id}`, 'DELETE'),
+            generalRequest(`${URL}historial/${id}`, 'DELETE'),
         
 	}
 };
