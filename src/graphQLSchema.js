@@ -14,7 +14,7 @@ import {
 	amigosMutations,
 	amigosQueries,
 	amigosTypeDef
-} from './sap_amigos_ms_api/profileTypeDef';
+} from './sap_amigos_ms_api/amigosTypeDef';
 
 import amigosResolvers from './sap_amigos_ms_api/amigosresolvers';
 
