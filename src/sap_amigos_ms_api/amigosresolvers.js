@@ -14,7 +14,7 @@ const resolvers = {
 	Mutation: {
 		NewAmistad: (_, { model }) =>
 			generalRequest(`${URL}`, 'POST', model),
-        DeleteAmistad: (_, { amigo1 },{ amigo2 }) =>
+        DeleteAmistad: (_, { amigo1,amigo2 }) =>
             generalRequest(`${URL}/${amigo1}/${amigo2}`, 'DELETE'),
 
 	}

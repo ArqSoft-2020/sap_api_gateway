@@ -2,8 +2,8 @@
 export const amigosTypeDef = `
 
 input ViewModelAmistadInput {
-    amigo1: Int
-    amigo2: Int
+    amigo1: String
+    amigo2: String
 }
 
 
