@@ -10,19 +10,29 @@ import {
 	usersTypeDef
 } from './sap_profile_ms_api/profileTypeDef';
 
+import {
+	canvasMutations,
+	canvasQueries,
+	canvasTypeDef
+} from './sap_canvas_ms_api/canvasTypeDef';
+
 import usersResolvers from './sap_profile_ms_api/resolvers';
+import canvasResolvers from './sap_canvas_ms_api/resolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
-		usersTypeDef
+		usersTypeDef,
+		canvasTypeDef
 	],
 	[
-		usersQueries
+		usersQueries,
+		canvasQueries
 	],
 	[
-		usersMutations
+		usersMutations,
+		canvasMutations
 	]
 );
 
@@ -31,6 +41,8 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		usersResolvers
+		usersResolvers,
+		canvasResolvers
 	)
 });
+
