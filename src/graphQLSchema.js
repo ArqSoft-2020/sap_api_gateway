@@ -17,6 +17,7 @@ import {
 } from './sap_amigos_ms_api/amigosTypeDef';
 
 import amigosResolvers from './sap_amigos_ms_api/amigosresolvers';
+import usersResolvers from './sap_profile_ms_api/resolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
