@@ -10,6 +10,6 @@ services:
       SAP_PROFILE_MS_API_ENTRY: 'api/User/'
       SAP_AMIGOS_MS_API_HOST: 'ec2-34-197-44-29.compute-1.amazonaws.com'
       SAP_AMIGOS_MS_API_PORT: '5000'
-      SAP_AMIGOS_MS_API_ENTRY: 'amigos/'
+      SAP_AMIGOS_MS_API_ENTRY: 'amigos'
     ports:
       - '4000:4000'
