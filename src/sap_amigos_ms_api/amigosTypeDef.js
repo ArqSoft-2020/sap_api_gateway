@@ -10,7 +10,7 @@ input ViewModelAmistadInput {
     Amigo2: Int
 }
 
-type ViewModelResponse {
+type ViewModelResponseA {
     error: Boolean
     response: String
     amistad: ViewModelAmistad
@@ -20,11 +20,11 @@ type ViewModelResponse {
 `;
 
 export const amigosQueries = `
-    AmigosInfo(id: Int!): ViewModelResponse!
+    AmigosInfo(id: Int!): ViewModelResponseA!
 `;
 
 export const amigosMutations = `
-    NewAmistad(model: ViewModelAmistadInput!): ViewModelResponse!
-    DeleteAmistad(Amigo1: Int!,Amigo2: Int!): ViewModelResponse!
+    NewAmistad(model: ViewModelAmistadInput!): ViewModelResponseA!
+    DeleteAmistad(Amigo1: Int!,Amigo2: Int!): ViewModelResponseA!
 
 `;
