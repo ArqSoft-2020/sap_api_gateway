@@ -1,30 +1,45 @@
 
 export const amigosTypeDef = `
-type ViewModelAmistad {
-    id: Int
-    Amigo1: Int
-    Amigo2: Int
-}
+
 input ViewModelAmistadInput {
-    Amigo1: Int
-    Amigo2: Int
+    amigo1: Int
+    amigo2: Int
 }
 
+
 type ViewModelResponseA {
-    error: Boolean
-    response: String
-    amistad: ViewModelAmistad
+    success: Boolean
+}
+
+type ViewModelResponseD {
+  deleted: String,
+  deleted2: String,
+  success: Boolean
+}
+
+type ViewModelResponseQ {
+  amigos1ra:[ViewModelResponseSubQ1]
+  amigos2da:[ViewModelResponseSubQ2]
+  success: Boolean
+}
+
+type ViewModelResponseSubQ1 {
+  amigo1: Int
+}
+
+type ViewModelResponseSubQ2 {
+  amigo2: Int
 }
 
 
 `;
 
 export const amigosQueries = `
-    AmigosInfo(id: Int!): ViewModelResponseA!
+    AmigosInfo(id: Int!): ViewModelResponseQ!
 `;
 
 export const amigosMutations = `
     NewAmistad(model: ViewModelAmistadInput!): ViewModelResponseA!
-    DeleteAmistad(Amigo1: Int!,Amigo2: Int!): ViewModelResponseA!
+    DeleteAmistad(amigo1: Int!,amigo2: Int!): ViewModelResponseD!
 
 `;
