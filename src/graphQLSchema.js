@@ -10,19 +10,25 @@ import {
 	usersTypeDef
 } from './sap_profile_ms_api/profileTypeDef';
 
-import usersResolvers from './sap_profile_ms_api/resolvers';
+import {
+	amigosMutations,
+	amigosQueries,
+	amigosTypeDef
+} from './sap_profile_ms_api/profileTypeDef';
+
+import amigosResolvers from './sap_amigos_ms_api/amigosresolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
-		usersTypeDef
+		usersTypeDef,amigosTypeDef
 	],
 	[
-		usersQueries
+		usersQueries,amigosQueries
 	],
 	[
-		usersMutations
+		usersMutations,amigosMutations
 	]
 );
 
@@ -31,6 +37,6 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		usersResolvers
+		usersResolvers, amigosResolvers
 	)
 });

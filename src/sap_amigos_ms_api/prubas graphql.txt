@@ -1,0 +1,51 @@
+
+
+mutation{
+  Register(model:{
+    Picture: "",
+    Email: "agaldanaw@unal.edu.co",
+    Name: "Andres",
+    LastName:"Aldana",
+    UserName: "agaldanaw",
+    Password: "Project.123",
+  ConfirmedPassword: "Project.123",
+  Country: "Colombia"}){
+    response
+  }
+}
+
+verificar
+
+obtener informacion
+
+query{
+  UserInfo(id : "eb04dc3a-fa37-4637-807c-207f70e33188"){
+    user {userName, name, lastName}
+  }
+}
+
+editar usuario
+mutation{
+  EditUser(id:"eb04dc3a-fa37-4637-807c-207f70e33188", 
+  	model: {Name:"Andres Giiovanny"}){
+    response
+  }
+}
+
+query{
+  UserInfo(id : "eb04dc3a-fa37-4637-807c-207f70e33188"){
+    user {userName, name, lastName}
+  }
+}
+
+query{
+  Login(model: {UserName: "agaldanaw", Password: "Project.123"}){
+    token
+  }
+}
+
+query{
+  ValidateToken(token:""){
+    token
+  }
+}
