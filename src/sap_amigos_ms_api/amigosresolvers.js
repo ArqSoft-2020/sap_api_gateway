@@ -8,14 +8,14 @@ console.log(URL);
 const resolvers = {
 	Query: {
 		AmigosInfo: (_, {id}) =>
-			getRequest(`${URL}/${id}`, ''),
+			getRequest(`${URL}${id}`, ''),
     },
 
 	Mutation: {
 		NewAmistad: (_, { model }) =>
 			generalRequest(`${URL}`, 'POST', model),
         DeleteAmistad: (_, { amigo1,amigo2 }) =>
-            generalRequest(`${URL}/${amigo1}/${amigo2}`, 'DELETE'),
+            generalRequest(`${URL}${amigo1}/${amigo2}`, 'DELETE'),
 
 	}
 };
