@@ -50,19 +50,14 @@ type ViewModelUser {
     lostGames: Int
 }
 input ViewModelUserInput {
-    Id: String
-    Name: String
-    LastName: String
-    UserName: String
-    Email: String
-    Password: String
-    ConfirmedPassword: String
-    Country: String
-    Picture: String
-    ImageBytes: String
-    TotalGames: Int
-    WonGames: Int
-    LostGames: Int
+    Name: String!
+    LastName: String!
+    UserName: String!
+    Email: String!
+    Password: String!
+    ConfirmedPassword: String!
+    Country: String!
+    Picture: String!
 } 
 
 input ViewModelUploadFile {
