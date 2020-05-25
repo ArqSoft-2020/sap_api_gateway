@@ -11,28 +11,34 @@ import {
 } from './sap_profile_ms_api/profileTypeDef';
 
 import {
+	amigosMutations,
+	amigosQueries,
+	amigosTypeDef
+} from './sap_amigos_ms_api/amigosTypeDef';
+
+
+import {
 	canvasMutations,
 	canvasQueries,
 	canvasTypeDef
 } from './sap_canvas_ms_api/canvasTypeDef';
 
+
 import usersResolvers from './sap_profile_ms_api/resolvers';
 import canvasResolvers from './sap_canvas_ms_api/resolvers';
+import amigosResolvers from './sap_amigos_ms_api/amigosresolvers';
 
 // merge the typeDefs
 const mergedTypeDefs = mergeSchemas(
 	[
 		'scalar JSON',
-		usersTypeDef,
-		canvasTypeDef
+		usersTypeDef,amigosTypeDef,canvasTypeDef
 	],
 	[
-		usersQueries,
-		canvasQueries
+		usersQueries,amigosQueries,canvasQueries
 	],
 	[
-		usersMutations,
-		canvasMutations
+		usersMutations,amigosMutations,canvasMutations
 	]
 );
 
@@ -41,8 +47,8 @@ export default makeExecutableSchema({
 	typeDefs: mergedTypeDefs,
 	resolvers: merge(
 		{ JSON: GraphQLJSON }, // allows scalar JSON
-		usersResolvers,
-		canvasResolvers
+		usersResolvers, amigosResolvers, canvasResolvers
+
 	)
 });
 
