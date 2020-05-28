@@ -91,6 +91,7 @@ export const usersQueries = `
     Login(model: ViewModelLogin!): ViewModelResponse
     ValidateToken(token: String!): ViewModelResponse!
     RequestPasswordChange(email: String!): ViewModelResponse!
+    ExistUser(email: String!): ViewModelResponse!
 `;
 
 export const usersMutations = `

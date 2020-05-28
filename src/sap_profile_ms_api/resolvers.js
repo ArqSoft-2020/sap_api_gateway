@@ -37,6 +37,8 @@ const resolvers = {
             generalRequest(`${URL}ValidateToken/${token}`, 'GET'),
         RequestPasswordChange: (_, { email }) =>
             generalRequest(`${URL}RequestPasswordChange/${email}`, 'POST'),
+        ExistUser: (_, { email }) =>
+            generalRequest(`${URL}ExistUser/${email}`, 'GET')
     },
 
 	Mutation: {
