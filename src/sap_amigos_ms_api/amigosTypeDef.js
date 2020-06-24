@@ -24,22 +24,22 @@ type ViewModelResponseQ {
 }
 
 type ViewModelResponseSubQ1 {
-  amigo1: Int
+  amigo1: String
 }
 
 type ViewModelResponseSubQ2 {
-  amigo2: Int
+  amigo2: String
 }
 
 
 `;
 
 export const amigosQueries = `
-    AmigosInfo(id: Int!): ViewModelResponseQ!
+    AmigosInfo(id: String!): ViewModelResponseQ!
 `;
 
 export const amigosMutations = `
     NewAmistad(model: ViewModelAmistadInput!): ViewModelResponseA!
-    DeleteAmistad(amigo1: Int!,amigo2: Int!): ViewModelResponseD!
+    DeleteAmistad(amigo1: String!,amigo2: String!): ViewModelResponseD!
 
 `;
